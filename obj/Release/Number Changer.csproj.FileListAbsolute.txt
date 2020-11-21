@@ -11,3 +11,7 @@ C:\Users\Ethan\Documents\GitHub\Number-Changer\obj\Release\Number Changer.csproj
 C:\Users\Ethan\Documents\GitHub\Number-Changer\obj\Release\fr\Number Changer.resources.dll
 C:\Users\Ethan\Documents\GitHub\Number-Changer\obj\Release\Number Changer.exe
 C:\Users\Ethan\Documents\GitHub\Number-Changer\obj\Release\Number Changer.pdb
+C:\Users\Ethan\Documents\GitHub\Number-Changer\bin\V1.0.4\Number Changer.exe.config
+C:\Users\Ethan\Documents\GitHub\Number-Changer\bin\V1.0.4\Number Changer.exe
+C:\Users\Ethan\Documents\GitHub\Number-Changer\bin\V1.0.4\Number Changer.pdb
+C:\Users\Ethan\Documents\GitHub\Number-Changer\bin\V1.0.4\fr\Number Changer.resources.dll

@@ -116,5 +116,10 @@ namespace Number_Changer
             ToChangeTextBox.Enabled = true;
             NumberLinesTextBox.Enabled = true;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("For example, if you write :\nhi @(*) !\nAnd 3 lines to create\nIn the output file, you will have :\nhi 0 !\nhi 1 !\nhi 2 !\nhi 3 !", "Example", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

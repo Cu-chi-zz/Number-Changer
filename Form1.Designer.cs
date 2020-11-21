@@ -40,6 +40,7 @@
             this.Version = new System.Windows.Forms.Label();
             this.finishedLabel = new System.Windows.Forms.Label();
             this.TookLabel = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonStart
@@ -111,6 +112,7 @@
             // 
             this.ProgressOfLines.Location = new System.Drawing.Point(12, 99);
             this.ProgressOfLines.Name = "ProgressOfLines";
+            this.ProgressOfLines.RightToLeftLayout = true;
             this.ProgressOfLines.Size = new System.Drawing.Size(540, 23);
             this.ProgressOfLines.TabIndex = 7;
             this.ProgressOfLines.Visible = false;
@@ -145,14 +147,14 @@
             this.Version.Name = "Version";
             this.Version.Size = new System.Drawing.Size(38, 13);
             this.Version.TabIndex = 10;
-            this.Version.Text = "V1.0.3";
+            this.Version.Text = "V1.0.4";
             // 
             // finishedLabel
             // 
             this.finishedLabel.AutoSize = true;
             this.finishedLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.finishedLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.finishedLabel.Location = new System.Drawing.Point(514, 83);
+            this.finishedLabel.Location = new System.Drawing.Point(514, 85);
             this.finishedLabel.Name = "finishedLabel";
             this.finishedLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.finishedLabel.Size = new System.Drawing.Size(36, 13);
@@ -165,13 +167,30 @@
             this.TookLabel.AutoSize = true;
             this.TookLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.TookLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.TookLabel.Location = new System.Drawing.Point(9, 83);
+            this.TookLabel.Location = new System.Drawing.Point(9, 85);
             this.TookLabel.Name = "TookLabel";
             this.TookLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.TookLabel.Size = new System.Drawing.Size(32, 13);
+            this.TookLabel.Size = new System.Drawing.Size(52, 13);
             this.TookLabel.TabIndex = 12;
-            this.TookLabel.Text = "Took";
+            this.TookLabel.Text = "Took *ms";
             this.TookLabel.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(97)))), ((int)(((byte)(125)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(146)))), ((int)(((byte)(189)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(146)))), ((int)(((byte)(189)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Rubik", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
+            this.button1.Location = new System.Drawing.Point(347, 63);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(203, 22);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Example";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // InterFace
             // 
@@ -180,6 +199,7 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(564, 185);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.TookLabel);
             this.Controls.Add(this.finishedLabel);
             this.Controls.Add(this.Version);
@@ -196,7 +216,7 @@
             this.MaximumSize = new System.Drawing.Size(580, 224);
             this.MinimumSize = new System.Drawing.Size(580, 224);
             this.Name = "InterFace";
-            this.Text = "Number Changer - V1.0.3";
+            this.Text = "Number Changer - V1.0.4";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,6 +235,7 @@
         private System.Windows.Forms.Label Version;
         private System.Windows.Forms.Label finishedLabel;
         private System.Windows.Forms.Label TookLabel;
+        private System.Windows.Forms.Button button1;
     }
 }
 
