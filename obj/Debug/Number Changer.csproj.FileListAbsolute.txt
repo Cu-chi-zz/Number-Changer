@@ -1,0 +1,10 @@
+C:\Users\Ethan\Documents\GitHub\Number-Changer\bin\Debug\Number Changer.exe.config
+C:\Users\Ethan\Documents\GitHub\Number-Changer\bin\Debug\Number Changer.exe
+C:\Users\Ethan\Documents\GitHub\Number-Changer\bin\Debug\Number Changer.pdb
+C:\Users\Ethan\Documents\GitHub\Number-Changer\obj\Debug\Number Changer.csprojAssemblyReference.cache
+C:\Users\Ethan\Documents\GitHub\Number-Changer\obj\Debug\Number_Changer.InterFace.resources
+C:\Users\Ethan\Documents\GitHub\Number-Changer\obj\Debug\Number_Changer.Properties.Resources.resources
+C:\Users\Ethan\Documents\GitHub\Number-Changer\obj\Debug\Number Changer.csproj.GenerateResource.cache
+C:\Users\Ethan\Documents\GitHub\Number-Changer\obj\Debug\Number Changer.csproj.CoreCompileInputs.cache
+C:\Users\Ethan\Documents\GitHub\Number-Changer\obj\Debug\Number Changer.exe
+C:\Users\Ethan\Documents\GitHub\Number-Changer\obj\Debug\Number Changer.pdb

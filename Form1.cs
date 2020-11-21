@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Number_Changer
 {
-    public partial class Form1 : Form
+    public partial class InterFace : Form
     {
-        public Form1()
+        public InterFace()
         {
             InitializeComponent();
         }
