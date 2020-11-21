@@ -1,0 +1,13 @@
+C:\Users\Ethan\Documents\GitHub\Number-Changer\bin\Release\Number Changer.exe.config
+C:\Users\Ethan\Documents\GitHub\Number-Changer\bin\Release\Number Changer.exe
+C:\Users\Ethan\Documents\GitHub\Number-Changer\bin\Release\Number Changer.pdb
+C:\Users\Ethan\Documents\GitHub\Number-Changer\bin\Release\fr\Number Changer.resources.dll
+C:\Users\Ethan\Documents\GitHub\Number-Changer\obj\Release\Number Changer.csprojAssemblyReference.cache
+C:\Users\Ethan\Documents\GitHub\Number-Changer\obj\Release\Number_Changer.InterFace.resources
+C:\Users\Ethan\Documents\GitHub\Number-Changer\obj\Release\Number_Changer.Properties.Resources.resources
+C:\Users\Ethan\Documents\GitHub\Number-Changer\obj\Release\Number_Changer.InterFace.fr.resources
+C:\Users\Ethan\Documents\GitHub\Number-Changer\obj\Release\Number Changer.csproj.GenerateResource.cache
+C:\Users\Ethan\Documents\GitHub\Number-Changer\obj\Release\Number Changer.csproj.CoreCompileInputs.cache
+C:\Users\Ethan\Documents\GitHub\Number-Changer\obj\Release\fr\Number Changer.resources.dll
+C:\Users\Ethan\Documents\GitHub\Number-Changer\obj\Release\Number Changer.exe
+C:\Users\Ethan\Documents\GitHub\Number-Changer\obj\Release\Number Changer.pdb

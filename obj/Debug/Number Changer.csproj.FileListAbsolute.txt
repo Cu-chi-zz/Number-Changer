@@ -11,5 +11,3 @@ C:\Users\Ethan\Documents\GitHub\Number-Changer\obj\Debug\Number Changer.pdb
 C:\Users\Ethan\Documents\GitHub\Number-Changer\bin\Debug\fr\Number Changer.resources.dll
 C:\Users\Ethan\Documents\GitHub\Number-Changer\obj\Debug\Number_Changer.InterFace.fr.resources
 C:\Users\Ethan\Documents\GitHub\Number-Changer\obj\Debug\fr\Number Changer.resources.dll
-C:\Users\Ethan\Documents\GitHub\Number-Changer\bin\Debug\Guna.UI2.dll
-C:\Users\Ethan\Documents\GitHub\Number-Changer\obj\Debug\Number Changer.csproj.CopyComplete

@@ -24,6 +24,7 @@ namespace Number_Changer
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
+            finishedLabel.Visible = false;
 
             string ToChangeEnteredcheck = ToChangeTextBox.Text;
             string LinesEnteredcheck = NumberLinesTextBox.Text;
@@ -99,6 +100,7 @@ namespace Number_Changer
                 }
 
                 ProgressOfLines.Visible = true;
+                finishedLabel.Visible = true;
                 SystemSounds.Exclamation.Play();
             }
 
