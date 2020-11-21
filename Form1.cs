@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Media;
+using System.Threading;
 
 namespace Number_Changer
 {
@@ -25,6 +26,7 @@ namespace Number_Changer
         private void buttonStart_Click(object sender, EventArgs e)
         {
             finishedLabel.Visible = false;
+            TookLabel.Visible = false;
 
             string ToChangeEnteredcheck = ToChangeTextBox.Text;
             string LinesEnteredcheck = NumberLinesTextBox.Text;
@@ -68,6 +70,8 @@ namespace Number_Changer
         private void filesCreator()
         {
 
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+
             int fileid = 0;
             bool notfinded = true;
             
@@ -99,8 +103,13 @@ namespace Number_Changer
                     }
                 }
 
+                watch.Stop();
+                var elapsedMs = watch.ElapsedMilliseconds;
+
+                TookLabel.Text = "Took "+ elapsedMs.ToString()+"ms";
                 ProgressOfLines.Visible = true;
                 finishedLabel.Visible = true;
+                TookLabel.Visible = true;
                 SystemSounds.Exclamation.Play();
             }
 

@@ -39,6 +39,7 @@
             this.ProblemsMsg = new System.Windows.Forms.Label();
             this.Version = new System.Windows.Forms.Label();
             this.finishedLabel = new System.Windows.Forms.Label();
+            this.TookLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonStart
@@ -144,7 +145,7 @@
             this.Version.Name = "Version";
             this.Version.Size = new System.Drawing.Size(38, 13);
             this.Version.TabIndex = 10;
-            this.Version.Text = "V1.0.2";
+            this.Version.Text = "V1.0.3";
             // 
             // finishedLabel
             // 
@@ -153,10 +154,24 @@
             this.finishedLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.finishedLabel.Location = new System.Drawing.Point(514, 83);
             this.finishedLabel.Name = "finishedLabel";
+            this.finishedLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.finishedLabel.Size = new System.Drawing.Size(36, 13);
             this.finishedLabel.TabIndex = 11;
             this.finishedLabel.Text = "Done!";
             this.finishedLabel.Visible = false;
+            // 
+            // TookLabel
+            // 
+            this.TookLabel.AutoSize = true;
+            this.TookLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.TookLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.TookLabel.Location = new System.Drawing.Point(9, 83);
+            this.TookLabel.Name = "TookLabel";
+            this.TookLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.TookLabel.Size = new System.Drawing.Size(32, 13);
+            this.TookLabel.TabIndex = 12;
+            this.TookLabel.Text = "Took";
+            this.TookLabel.Visible = false;
             // 
             // InterFace
             // 
@@ -165,6 +180,7 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(564, 185);
+            this.Controls.Add(this.TookLabel);
             this.Controls.Add(this.finishedLabel);
             this.Controls.Add(this.Version);
             this.Controls.Add(this.ProblemsMsg);
@@ -176,13 +192,11 @@
             this.Controls.Add(this.ToChangeTextBox);
             this.Controls.Add(this.buttonStart);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(580, 224);
             this.MinimumSize = new System.Drawing.Size(580, 224);
             this.Name = "InterFace";
-            this.Text = "Number Changer - V1.0.2";
+            this.Text = "Number Changer - V1.0.3";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,6 +214,7 @@
         private System.Windows.Forms.Label ProblemsMsg;
         private System.Windows.Forms.Label Version;
         private System.Windows.Forms.Label finishedLabel;
+        private System.Windows.Forms.Label TookLabel;
     }
 }
 
