@@ -34,6 +34,8 @@
             this.NumberLinesTextBox = new System.Windows.Forms.TextBox();
             this.DescLabelInputText = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.ProgressOfLines = new System.Windows.Forms.ProgressBar();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonStart
@@ -75,12 +77,24 @@
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             // 
+            // ProgressOfLines
+            // 
+            resources.ApplyResources(this.ProgressOfLines, "ProgressOfLines");
+            this.ProgressOfLines.Name = "ProgressOfLines";
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
+            // 
             // InterFace
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(84)))), ((int)(((byte)(201)))));
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.ProgressOfLines);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DescLabelInputText);
             this.Controls.Add(this.NumberLinesTextBox);
@@ -100,6 +114,8 @@
         private System.Windows.Forms.TextBox NumberLinesTextBox;
         private System.Windows.Forms.Label DescLabelInputText;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ProgressBar ProgressOfLines;
+        private System.Windows.Forms.Label label2;
     }
 }
 

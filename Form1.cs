@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Media;
 
 namespace Number_Changer
 {
@@ -58,6 +59,8 @@ namespace Number_Changer
                 return;
             }
 
+            ProgressOfLines.Visible = true;
+
             filesCreator();
         }
 
@@ -66,20 +69,22 @@ namespace Number_Changer
 
             int fileid = 0;
             bool notfinded = true;
-
-            string filepath = $@"output-nc-{fileid}.txt";
             
             while (notfinded)
             {
                 fileid += 1;
-                filepath = $@"output-nc-{fileid}.txt";
+                string filepath = $@"output-nc-{fileid}.txt";
                 if (!File.Exists(filepath))
                 {
                     notfinded = false;
-
                 }
             }
 
+            ProgressOfLines.Maximum = Int32.Parse(LinesEntered);
+
+            // Bloque durant les changements durant le processus
+            ToChangeTextBox.Enabled = false;
+            NumberLinesTextBox.Enabled = false;
 
             using (StreamWriter file = new StreamWriter($@"output-nc-{fileid}.txt", true))
             {
@@ -87,9 +92,18 @@ namespace Number_Changer
                 {
                     var replacement = ToChangeEntered.Replace("@(*)", i.ToString());
                     file.WriteLine(replacement);
+                    if (ProgressOfLines.Value < ProgressOfLines.Maximum)
+                    {
+                        ProgressOfLines.Value += 1;
+                    }
                 }
+
+                ProgressOfLines.Visible = true;
+                SystemSounds.Exclamation.Play();
             }
 
+            ToChangeTextBox.Enabled = true;
+            NumberLinesTextBox.Enabled = true;
         }
     }
 }
