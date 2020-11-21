@@ -28,20 +28,78 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InterFace));
+            this.buttonStart = new System.Windows.Forms.Button();
+            this.ToChangeTextBox = new System.Windows.Forms.TextBox();
+            this.NumberLinesTextBox = new System.Windows.Forms.TextBox();
+            this.DescLabelInputText = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // buttonStart
+            // 
+            this.buttonStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.buttonStart.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.buttonStart.FlatAppearance.BorderSize = 0;
+            this.buttonStart.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.buttonStart.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            resources.ApplyResources(this.buttonStart, "buttonStart");
+            this.buttonStart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(84)))), ((int)(((byte)(201)))));
+            this.buttonStart.Name = "buttonStart";
+            this.buttonStart.UseVisualStyleBackColor = false;
+            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
+            // 
+            // ToChangeTextBox
+            // 
+            this.ToChangeTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.ToChangeTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.ToChangeTextBox, "ToChangeTextBox");
+            this.ToChangeTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(84)))), ((int)(((byte)(201)))));
+            this.ToChangeTextBox.Name = "ToChangeTextBox";
+            // 
+            // NumberLinesTextBox
+            // 
+            this.NumberLinesTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(84)))), ((int)(((byte)(201)))));
+            this.NumberLinesTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.NumberLinesTextBox, "NumberLinesTextBox");
+            this.NumberLinesTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.NumberLinesTextBox.Name = "NumberLinesTextBox";
+            // 
+            // DescLabelInputText
+            // 
+            resources.ApplyResources(this.DescLabelInputText, "DescLabelInputText");
+            this.DescLabelInputText.Name = "DescLabelInputText";
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
             // 
             // InterFace
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(84)))), ((int)(((byte)(201)))));
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.DescLabelInputText);
+            this.Controls.Add(this.NumberLinesTextBox);
+            this.Controls.Add(this.ToChangeTextBox);
+            this.Controls.Add(this.buttonStart);
+            this.MaximizeBox = false;
             this.Name = "InterFace";
-            this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Button buttonStart;
+        private System.Windows.Forms.TextBox ToChangeTextBox;
+        private System.Windows.Forms.TextBox NumberLinesTextBox;
+        private System.Windows.Forms.Label DescLabelInputText;
+        private System.Windows.Forms.Label label1;
     }
 }
 
