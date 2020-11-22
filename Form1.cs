@@ -134,6 +134,14 @@ namespace Number_Changer
             MessageBox.Show($"{a}", "Your text", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        // Ajouter un bouton pour aller au fichier directement
+        private void ProblemsMsg_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/Cu-chi/Number-Changer/issues/new");
+        }
+
+        private void GoToFolderButton_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(@".\");
+        }
     }
 }

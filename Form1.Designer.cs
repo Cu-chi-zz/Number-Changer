@@ -42,11 +42,13 @@
             this.TookLabel = new System.Windows.Forms.Label();
             this.ExampleButton = new System.Windows.Forms.Button();
             this.seeEnteredTextButton = new System.Windows.Forms.Button();
+            this.GoToFolderButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonStart
             // 
             this.buttonStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(97)))), ((int)(((byte)(125)))));
+            this.buttonStart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonStart.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(146)))), ((int)(((byte)(189)))));
             this.buttonStart.FlatAppearance.BorderSize = 0;
             this.buttonStart.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(146)))), ((int)(((byte)(189)))));
@@ -95,9 +97,9 @@
             this.DescLabelInputText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.DescLabelInputText.Location = new System.Drawing.Point(7, -1);
             this.DescLabelInputText.Name = "DescLabelInputText";
-            this.DescLabelInputText.Size = new System.Drawing.Size(174, 29);
+            this.DescLabelInputText.Size = new System.Drawing.Size(156, 29);
             this.DescLabelInputText.TabIndex = 5;
-            this.DescLabelInputText.Text = "Write your text...";
+            this.DescLabelInputText.Text = "Write your text";
             // 
             // DescLabelInputLine
             // 
@@ -114,8 +116,10 @@
             // ProgressOfLines
             // 
             this.ProgressOfLines.Location = new System.Drawing.Point(12, 99);
+            this.ProgressOfLines.MarqueeAnimationSpeed = 1;
             this.ProgressOfLines.Name = "ProgressOfLines";
             this.ProgressOfLines.Size = new System.Drawing.Size(540, 23);
+            this.ProgressOfLines.Step = 1;
             this.ProgressOfLines.TabIndex = 7;
             this.ProgressOfLines.Visible = false;
             // 
@@ -133,12 +137,14 @@
             // ProblemsMsg
             // 
             this.ProblemsMsg.AutoSize = true;
+            this.ProblemsMsg.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ProblemsMsg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.ProblemsMsg.Location = new System.Drawing.Point(383, 169);
             this.ProblemsMsg.Name = "ProblemsMsg";
             this.ProblemsMsg.Size = new System.Drawing.Size(184, 13);
             this.ProblemsMsg.TabIndex = 9;
             this.ProblemsMsg.Text = "Any problems? Report them on github";
+            this.ProblemsMsg.Click += new System.EventHandler(this.ProblemsMsg_Click);
             // 
             // Version
             // 
@@ -149,7 +155,7 @@
             this.Version.Name = "Version";
             this.Version.Size = new System.Drawing.Size(76, 13);
             this.Version.TabIndex = 10;
-            this.Version.Text = "V1.0.4 - Cuchi\'";
+            this.Version.Text = "V1.0.5 - Cuchi\'";
             // 
             // finishedLabel
             // 
@@ -179,15 +185,16 @@
             // ExampleButton
             // 
             this.ExampleButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(97)))), ((int)(((byte)(125)))));
+            this.ExampleButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ExampleButton.FlatAppearance.BorderSize = 0;
             this.ExampleButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(146)))), ((int)(((byte)(189)))));
             this.ExampleButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(146)))), ((int)(((byte)(189)))));
             this.ExampleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ExampleButton.Font = new System.Drawing.Font("Rubik", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ExampleButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
-            this.ExampleButton.Location = new System.Drawing.Point(347, 63);
+            this.ExampleButton.Location = new System.Drawing.Point(161, 6);
             this.ExampleButton.Name = "ExampleButton";
-            this.ExampleButton.Size = new System.Drawing.Size(203, 22);
+            this.ExampleButton.Size = new System.Drawing.Size(70, 22);
             this.ExampleButton.TabIndex = 13;
             this.ExampleButton.Text = "Example";
             this.ExampleButton.UseVisualStyleBackColor = false;
@@ -196,19 +203,38 @@
             // seeEnteredTextButton
             // 
             this.seeEnteredTextButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(97)))), ((int)(((byte)(125)))));
+            this.seeEnteredTextButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.seeEnteredTextButton.FlatAppearance.BorderSize = 0;
             this.seeEnteredTextButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(146)))), ((int)(((byte)(189)))));
             this.seeEnteredTextButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(146)))), ((int)(((byte)(189)))));
             this.seeEnteredTextButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.seeEnteredTextButton.Font = new System.Drawing.Font("Rubik", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.seeEnteredTextButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
-            this.seeEnteredTextButton.Location = new System.Drawing.Point(235, 6);
+            this.seeEnteredTextButton.Location = new System.Drawing.Point(237, 6);
             this.seeEnteredTextButton.Name = "seeEnteredTextButton";
-            this.seeEnteredTextButton.Size = new System.Drawing.Size(171, 22);
+            this.seeEnteredTextButton.Size = new System.Drawing.Size(169, 22);
             this.seeEnteredTextButton.TabIndex = 14;
             this.seeEnteredTextButton.Text = "See what you\'ve entered";
             this.seeEnteredTextButton.UseVisualStyleBackColor = false;
             this.seeEnteredTextButton.Click += new System.EventHandler(this.seeEnteredTextButton_Click);
+            // 
+            // GoToFolderButton
+            // 
+            this.GoToFolderButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(97)))), ((int)(((byte)(125)))));
+            this.GoToFolderButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.GoToFolderButton.FlatAppearance.BorderSize = 0;
+            this.GoToFolderButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(146)))), ((int)(((byte)(189)))));
+            this.GoToFolderButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(146)))), ((int)(((byte)(189)))));
+            this.GoToFolderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.GoToFolderButton.Font = new System.Drawing.Font("Rubik", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GoToFolderButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
+            this.GoToFolderButton.Location = new System.Drawing.Point(356, 63);
+            this.GoToFolderButton.Name = "GoToFolderButton";
+            this.GoToFolderButton.Size = new System.Drawing.Size(194, 22);
+            this.GoToFolderButton.TabIndex = 15;
+            this.GoToFolderButton.Text = "Go To Folder";
+            this.GoToFolderButton.UseVisualStyleBackColor = false;
+            this.GoToFolderButton.Click += new System.EventHandler(this.GoToFolderButton_Click);
             // 
             // InterFace
             // 
@@ -217,6 +243,7 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(564, 185);
+            this.Controls.Add(this.GoToFolderButton);
             this.Controls.Add(this.seeEnteredTextButton);
             this.Controls.Add(this.ExampleButton);
             this.Controls.Add(this.TookLabel);
@@ -230,12 +257,13 @@
             this.Controls.Add(this.NumberLinesTextBox);
             this.Controls.Add(this.ToChangeTextBox);
             this.Controls.Add(this.buttonStart);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(580, 224);
             this.MinimumSize = new System.Drawing.Size(580, 224);
             this.Name = "InterFace";
-            this.Text = "Number Changer - V1.0.4";
+            this.Text = "Number Changer - V1.0.5";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,6 +284,7 @@
         private System.Windows.Forms.Label TookLabel;
         private System.Windows.Forms.Button ExampleButton;
         private System.Windows.Forms.Button seeEnteredTextButton;
+        private System.Windows.Forms.Button GoToFolderButton;
     }
 }
 
