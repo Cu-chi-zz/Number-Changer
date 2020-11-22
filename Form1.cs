@@ -91,8 +91,10 @@ namespace Number_Changer
             ToChangeTextBox.Enabled = false;
             NumberLinesTextBox.Enabled = false;
 
+
             using (StreamWriter file = new StreamWriter($@"output-nc-{fileid}.txt", true))
             {
+                TookLabel.Visible = true;
                 for (int i = 0; i != Int64.Parse(LinesEntered) + 1; i++)
                 {
                     var replacement = ToChangeEntered.Replace("@(*)", i.ToString());
@@ -101,6 +103,10 @@ namespace Number_Changer
                     {
                         ProgressOfLines.Value += 1;
                     }
+                    ProgressOfLines.Refresh();
+                    TookLabel.Text = $"Lines created: {i}/{Int64.Parse(LinesEntered)}";
+                    TookLabel.Refresh();
+
                 }
 
                 watch.Stop();
@@ -117,9 +123,17 @@ namespace Number_Changer
             NumberLinesTextBox.Enabled = true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ExampleButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show("For example, if you write :\nhi @(*) !\nAnd 3 lines to create\nIn the output file, you will have :\nhi 0 !\nhi 1 !\nhi 2 !\nhi 3 !", "Example", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void seeEnteredTextButton_Click(object sender, EventArgs e)
+        {
+            string a = ToChangeTextBox.Text;
+            MessageBox.Show($"{a}", "Your text", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        // Ajouter un bouton pour aller au fichier directement
     }
 }

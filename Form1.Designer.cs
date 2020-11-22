@@ -40,7 +40,8 @@
             this.Version = new System.Windows.Forms.Label();
             this.finishedLabel = new System.Windows.Forms.Label();
             this.TookLabel = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ExampleButton = new System.Windows.Forms.Button();
+            this.seeEnteredTextButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonStart
@@ -69,7 +70,9 @@
             this.ToChangeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ToChangeTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.ToChangeTextBox.Location = new System.Drawing.Point(12, 31);
+            this.ToChangeTextBox.Multiline = true;
             this.ToChangeTextBox.Name = "ToChangeTextBox";
+            this.ToChangeTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.ToChangeTextBox.Size = new System.Drawing.Size(394, 26);
             this.ToChangeTextBox.TabIndex = 3;
             // 
@@ -112,7 +115,6 @@
             // 
             this.ProgressOfLines.Location = new System.Drawing.Point(12, 99);
             this.ProgressOfLines.Name = "ProgressOfLines";
-            this.ProgressOfLines.RightToLeftLayout = true;
             this.ProgressOfLines.Size = new System.Drawing.Size(540, 23);
             this.ProgressOfLines.TabIndex = 7;
             this.ProgressOfLines.Visible = false;
@@ -145,9 +147,9 @@
             this.Version.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Version.Location = new System.Drawing.Point(0, 169);
             this.Version.Name = "Version";
-            this.Version.Size = new System.Drawing.Size(38, 13);
+            this.Version.Size = new System.Drawing.Size(76, 13);
             this.Version.TabIndex = 10;
-            this.Version.Text = "V1.0.4";
+            this.Version.Text = "V1.0.4 - Cuchi\'";
             // 
             // finishedLabel
             // 
@@ -170,27 +172,43 @@
             this.TookLabel.Location = new System.Drawing.Point(9, 85);
             this.TookLabel.Name = "TookLabel";
             this.TookLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.TookLabel.Size = new System.Drawing.Size(52, 13);
+            this.TookLabel.Size = new System.Drawing.Size(0, 13);
             this.TookLabel.TabIndex = 12;
-            this.TookLabel.Text = "Took *ms";
             this.TookLabel.Visible = false;
             // 
-            // button1
+            // ExampleButton
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(97)))), ((int)(((byte)(125)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(146)))), ((int)(((byte)(189)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(146)))), ((int)(((byte)(189)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Rubik", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
-            this.button1.Location = new System.Drawing.Point(347, 63);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(203, 22);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Example";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.ExampleButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(97)))), ((int)(((byte)(125)))));
+            this.ExampleButton.FlatAppearance.BorderSize = 0;
+            this.ExampleButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(146)))), ((int)(((byte)(189)))));
+            this.ExampleButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(146)))), ((int)(((byte)(189)))));
+            this.ExampleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExampleButton.Font = new System.Drawing.Font("Rubik", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExampleButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
+            this.ExampleButton.Location = new System.Drawing.Point(347, 63);
+            this.ExampleButton.Name = "ExampleButton";
+            this.ExampleButton.Size = new System.Drawing.Size(203, 22);
+            this.ExampleButton.TabIndex = 13;
+            this.ExampleButton.Text = "Example";
+            this.ExampleButton.UseVisualStyleBackColor = false;
+            this.ExampleButton.Click += new System.EventHandler(this.ExampleButton_Click);
+            // 
+            // seeEnteredTextButton
+            // 
+            this.seeEnteredTextButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(97)))), ((int)(((byte)(125)))));
+            this.seeEnteredTextButton.FlatAppearance.BorderSize = 0;
+            this.seeEnteredTextButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(146)))), ((int)(((byte)(189)))));
+            this.seeEnteredTextButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(146)))), ((int)(((byte)(189)))));
+            this.seeEnteredTextButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.seeEnteredTextButton.Font = new System.Drawing.Font("Rubik", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.seeEnteredTextButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
+            this.seeEnteredTextButton.Location = new System.Drawing.Point(235, 6);
+            this.seeEnteredTextButton.Name = "seeEnteredTextButton";
+            this.seeEnteredTextButton.Size = new System.Drawing.Size(171, 22);
+            this.seeEnteredTextButton.TabIndex = 14;
+            this.seeEnteredTextButton.Text = "See what you\'ve entered";
+            this.seeEnteredTextButton.UseVisualStyleBackColor = false;
+            this.seeEnteredTextButton.Click += new System.EventHandler(this.seeEnteredTextButton_Click);
             // 
             // InterFace
             // 
@@ -199,7 +217,8 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(564, 185);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.seeEnteredTextButton);
+            this.Controls.Add(this.ExampleButton);
             this.Controls.Add(this.TookLabel);
             this.Controls.Add(this.finishedLabel);
             this.Controls.Add(this.Version);
@@ -235,7 +254,8 @@
         private System.Windows.Forms.Label Version;
         private System.Windows.Forms.Label finishedLabel;
         private System.Windows.Forms.Label TookLabel;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ExampleButton;
+        private System.Windows.Forms.Button seeEnteredTextButton;
     }
 }
 
