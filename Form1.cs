@@ -22,6 +22,7 @@ namespace Number_Changer
 
         public static string ToChangeEntered = "";
         public static string LinesEntered = "";
+        public static string PathAndNameLastFile = "";
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
@@ -70,15 +71,17 @@ namespace Number_Changer
         private void filesCreator()
         {
 
-            var watch = System.Diagnostics.Stopwatch.StartNew();
-
             int fileid = 0;
             bool notfinded = true;
-            
+
+            string path = @".\output\";
+
+            IsFolderExisting(path);
+
             while (notfinded)
             {
                 fileid += 1;
-                string filepath = $@"output-nc-{fileid}.txt";
+                string filepath = $@"{path}{fileid}.txt";
                 if (!File.Exists(filepath))
                 {
                     notfinded = false;
@@ -92,8 +95,9 @@ namespace Number_Changer
             NumberLinesTextBox.Enabled = false;
 
 
-            using (StreamWriter file = new StreamWriter($@"output-nc-{fileid}.txt", true))
+            using (StreamWriter file = new StreamWriter($@"{path}{fileid}.txt", true))
             {
+                var watch = System.Diagnostics.Stopwatch.StartNew();
                 TookLabel.Visible = true;
                 for (int i = 0; i != Int64.Parse(LinesEntered) + 1; i++)
                 {
@@ -111,16 +115,30 @@ namespace Number_Changer
 
                 watch.Stop();
                 var elapsedMs = watch.ElapsedMilliseconds;
-
                 TookLabel.Text = "Took "+ elapsedMs.ToString()+"ms";
+
                 ProgressOfLines.Visible = true;
                 finishedLabel.Visible = true;
                 TookLabel.Visible = true;
+
+                PathAndNameLastFile = $"{path}{fileid}.txt";
+                CopyCreatedFileButton.Enabled = true;
+
                 SystemSounds.Exclamation.Play();
             }
 
             ToChangeTextBox.Enabled = true;
             NumberLinesTextBox.Enabled = true;
+        }
+
+        private static bool IsFolderExisting(string path)
+        {
+            if (Directory.Exists(path)) { return true; }
+            else 
+            {
+                Directory.CreateDirectory(path);
+                return false; 
+            }
         }
 
         private void ExampleButton_Click(object sender, EventArgs e)
@@ -142,6 +160,33 @@ namespace Number_Changer
         private void GoToFolderButton_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start(@".\");
+        }
+
+        private void ClearOutputFolderButton_Click(object sender, EventArgs e)
+        {
+            string path = @".\output\";
+
+            if (Directory.Exists(path)) 
+            {
+                int fileInFolder = Directory.GetFiles(path).Length;
+                DialogResult msgboxResult = MessageBox.Show($"Clear {fileInFolder} files in the output folder?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (msgboxResult == DialogResult.Yes)
+                {
+                    CopyCreatedFileButton.Enabled = false;
+                    Directory.Delete(path, true);
+                    SystemSounds.Exclamation.Play();
+                }
+            }
+            else
+            {
+                MessageBox.Show("The directory doesn't exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void CopyCreatedFileButton_Click(object sender, EventArgs e)
+        {
+            string InteriorLastFile = File.ReadAllText(PathAndNameLastFile).ToString();
+            Clipboard.SetText(InteriorLastFile);
         }
     }
 }

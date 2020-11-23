@@ -43,6 +43,8 @@
             this.ExampleButton = new System.Windows.Forms.Button();
             this.seeEnteredTextButton = new System.Windows.Forms.Button();
             this.GoToFolderButton = new System.Windows.Forms.Button();
+            this.ClearOutputFolderButton = new System.Windows.Forms.Button();
+            this.CopyCreatedFileButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonStart
@@ -57,7 +59,7 @@
             this.buttonStart.Font = new System.Drawing.Font("Master Black Personal Use", 26.25F, System.Drawing.FontStyle.Bold);
             this.buttonStart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
             this.buttonStart.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.buttonStart.Location = new System.Drawing.Point(12, 128);
+            this.buttonStart.Location = new System.Drawing.Point(12, 130);
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(540, 36);
             this.buttonStart.TabIndex = 0;
@@ -71,7 +73,7 @@
             this.ToChangeTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ToChangeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.ToChangeTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.ToChangeTextBox.Location = new System.Drawing.Point(12, 31);
+            this.ToChangeTextBox.Location = new System.Drawing.Point(12, 30);
             this.ToChangeTextBox.Multiline = true;
             this.ToChangeTextBox.Name = "ToChangeTextBox";
             this.ToChangeTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -84,7 +86,7 @@
             this.NumberLinesTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.NumberLinesTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.NumberLinesTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(97)))), ((int)(((byte)(125)))));
-            this.NumberLinesTextBox.Location = new System.Drawing.Point(412, 31);
+            this.NumberLinesTextBox.Location = new System.Drawing.Point(410, 30);
             this.NumberLinesTextBox.Name = "NumberLinesTextBox";
             this.NumberLinesTextBox.Size = new System.Drawing.Size(140, 26);
             this.NumberLinesTextBox.TabIndex = 4;
@@ -95,7 +97,7 @@
             this.DescLabelInputText.AutoSize = true;
             this.DescLabelInputText.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Italic);
             this.DescLabelInputText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.DescLabelInputText.Location = new System.Drawing.Point(7, -1);
+            this.DescLabelInputText.Location = new System.Drawing.Point(7, -2);
             this.DescLabelInputText.Name = "DescLabelInputText";
             this.DescLabelInputText.Size = new System.Drawing.Size(156, 29);
             this.DescLabelInputText.TabIndex = 5;
@@ -107,7 +109,7 @@
             this.DescLabelInputLine.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Italic);
             this.DescLabelInputLine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.DescLabelInputLine.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.DescLabelInputLine.Location = new System.Drawing.Point(407, -1);
+            this.DescLabelInputLine.Location = new System.Drawing.Point(407, -2);
             this.DescLabelInputLine.Name = "DescLabelInputLine";
             this.DescLabelInputLine.Size = new System.Drawing.Size(151, 29);
             this.DescLabelInputLine.TabIndex = 6;
@@ -115,8 +117,9 @@
             // 
             // ProgressOfLines
             // 
-            this.ProgressOfLines.Location = new System.Drawing.Point(12, 99);
+            this.ProgressOfLines.Location = new System.Drawing.Point(12, 101);
             this.ProgressOfLines.MarqueeAnimationSpeed = 1;
+            this.ProgressOfLines.Maximum = 0;
             this.ProgressOfLines.Name = "ProgressOfLines";
             this.ProgressOfLines.Size = new System.Drawing.Size(540, 23);
             this.ProgressOfLines.Step = 1;
@@ -128,7 +131,7 @@
             this.TipVar.AutoSize = true;
             this.TipVar.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Bold);
             this.TipVar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.TipVar.Location = new System.Drawing.Point(7, 60);
+            this.TipVar.Location = new System.Drawing.Point(7, 62);
             this.TipVar.Name = "TipVar";
             this.TipVar.Size = new System.Drawing.Size(343, 25);
             this.TipVar.TabIndex = 8;
@@ -139,7 +142,7 @@
             this.ProblemsMsg.AutoSize = true;
             this.ProblemsMsg.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ProblemsMsg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.ProblemsMsg.Location = new System.Drawing.Point(383, 169);
+            this.ProblemsMsg.Location = new System.Drawing.Point(382, 192);
             this.ProblemsMsg.Name = "ProblemsMsg";
             this.ProblemsMsg.Size = new System.Drawing.Size(184, 13);
             this.ProblemsMsg.TabIndex = 9;
@@ -151,18 +154,18 @@
             this.Version.AutoSize = true;
             this.Version.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.Version.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Version.Location = new System.Drawing.Point(0, 169);
+            this.Version.Location = new System.Drawing.Point(0, 192);
             this.Version.Name = "Version";
             this.Version.Size = new System.Drawing.Size(76, 13);
             this.Version.TabIndex = 10;
-            this.Version.Text = "V1.0.5 - Cuchi\'";
+            this.Version.Text = "V1.0.7 - Cuchi\'";
             // 
             // finishedLabel
             // 
             this.finishedLabel.AutoSize = true;
             this.finishedLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.finishedLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.finishedLabel.Location = new System.Drawing.Point(514, 85);
+            this.finishedLabel.Location = new System.Drawing.Point(514, 87);
             this.finishedLabel.Name = "finishedLabel";
             this.finishedLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.finishedLabel.Size = new System.Drawing.Size(36, 13);
@@ -175,7 +178,7 @@
             this.TookLabel.AutoSize = true;
             this.TookLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.TookLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.TookLabel.Location = new System.Drawing.Point(9, 85);
+            this.TookLabel.Location = new System.Drawing.Point(9, 87);
             this.TookLabel.Name = "TookLabel";
             this.TookLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TookLabel.Size = new System.Drawing.Size(0, 13);
@@ -192,7 +195,7 @@
             this.ExampleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ExampleButton.Font = new System.Drawing.Font("Rubik", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ExampleButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
-            this.ExampleButton.Location = new System.Drawing.Point(161, 6);
+            this.ExampleButton.Location = new System.Drawing.Point(161, 4);
             this.ExampleButton.Name = "ExampleButton";
             this.ExampleButton.Size = new System.Drawing.Size(70, 22);
             this.ExampleButton.TabIndex = 13;
@@ -210,7 +213,7 @@
             this.seeEnteredTextButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.seeEnteredTextButton.Font = new System.Drawing.Font("Rubik", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.seeEnteredTextButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
-            this.seeEnteredTextButton.Location = new System.Drawing.Point(237, 6);
+            this.seeEnteredTextButton.Location = new System.Drawing.Point(237, 4);
             this.seeEnteredTextButton.Name = "seeEnteredTextButton";
             this.seeEnteredTextButton.Size = new System.Drawing.Size(169, 22);
             this.seeEnteredTextButton.TabIndex = 14;
@@ -228,7 +231,7 @@
             this.GoToFolderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GoToFolderButton.Font = new System.Drawing.Font("Rubik", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GoToFolderButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
-            this.GoToFolderButton.Location = new System.Drawing.Point(356, 63);
+            this.GoToFolderButton.Location = new System.Drawing.Point(356, 62);
             this.GoToFolderButton.Name = "GoToFolderButton";
             this.GoToFolderButton.Size = new System.Drawing.Size(194, 22);
             this.GoToFolderButton.TabIndex = 15;
@@ -236,13 +239,52 @@
             this.GoToFolderButton.UseVisualStyleBackColor = false;
             this.GoToFolderButton.Click += new System.EventHandler(this.GoToFolderButton_Click);
             // 
+            // ClearOutputFolderButton
+            // 
+            this.ClearOutputFolderButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(97)))), ((int)(((byte)(125)))));
+            this.ClearOutputFolderButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ClearOutputFolderButton.FlatAppearance.BorderSize = 0;
+            this.ClearOutputFolderButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(146)))), ((int)(((byte)(189)))));
+            this.ClearOutputFolderButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(146)))), ((int)(((byte)(189)))));
+            this.ClearOutputFolderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClearOutputFolderButton.Font = new System.Drawing.Font("Rubik", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClearOutputFolderButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
+            this.ClearOutputFolderButton.Location = new System.Drawing.Point(285, 169);
+            this.ClearOutputFolderButton.Name = "ClearOutputFolderButton";
+            this.ClearOutputFolderButton.Size = new System.Drawing.Size(267, 22);
+            this.ClearOutputFolderButton.TabIndex = 16;
+            this.ClearOutputFolderButton.Text = "CLEAR OUTPUT FOLDER";
+            this.ClearOutputFolderButton.UseVisualStyleBackColor = false;
+            this.ClearOutputFolderButton.Click += new System.EventHandler(this.ClearOutputFolderButton_Click);
+            // 
+            // CopyCreatedFileButton
+            // 
+            this.CopyCreatedFileButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(97)))), ((int)(((byte)(125)))));
+            this.CopyCreatedFileButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CopyCreatedFileButton.Enabled = false;
+            this.CopyCreatedFileButton.FlatAppearance.BorderSize = 0;
+            this.CopyCreatedFileButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(146)))), ((int)(((byte)(189)))));
+            this.CopyCreatedFileButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(146)))), ((int)(((byte)(189)))));
+            this.CopyCreatedFileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CopyCreatedFileButton.Font = new System.Drawing.Font("Rubik", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CopyCreatedFileButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
+            this.CopyCreatedFileButton.Location = new System.Drawing.Point(12, 169);
+            this.CopyCreatedFileButton.Name = "CopyCreatedFileButton";
+            this.CopyCreatedFileButton.Size = new System.Drawing.Size(267, 22);
+            this.CopyCreatedFileButton.TabIndex = 17;
+            this.CopyCreatedFileButton.Text = "COPY CREATED FILE";
+            this.CopyCreatedFileButton.UseVisualStyleBackColor = false;
+            this.CopyCreatedFileButton.Click += new System.EventHandler(this.CopyCreatedFileButton_Click);
+            // 
             // InterFace
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(564, 185);
+            this.ClientSize = new System.Drawing.Size(564, 205);
+            this.Controls.Add(this.CopyCreatedFileButton);
+            this.Controls.Add(this.ClearOutputFolderButton);
             this.Controls.Add(this.GoToFolderButton);
             this.Controls.Add(this.seeEnteredTextButton);
             this.Controls.Add(this.ExampleButton);
@@ -260,10 +302,10 @@
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(580, 224);
+            this.MaximumSize = new System.Drawing.Size(580, 244);
             this.MinimumSize = new System.Drawing.Size(580, 224);
             this.Name = "InterFace";
-            this.Text = "Number Changer - V1.0.5";
+            this.Text = "Number Changer - V1.0.7";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,6 +327,8 @@
         private System.Windows.Forms.Button ExampleButton;
         private System.Windows.Forms.Button seeEnteredTextButton;
         private System.Windows.Forms.Button GoToFolderButton;
+        private System.Windows.Forms.Button ClearOutputFolderButton;
+        private System.Windows.Forms.Button CopyCreatedFileButton;
     }
 }
 
