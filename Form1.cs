@@ -54,7 +54,7 @@ namespace Number_Changer
             }
             else if (!isNumericLines)
             {
-                MessageBox.Show("Number of lines entered is not a number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Number of lines entered is not a number or is invalid", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             else if (Int64.Parse(LinesEntered) <= 0)
@@ -68,15 +68,20 @@ namespace Number_Changer
             filesCreator();
         }
 
-        private void filesCreator()
+        private async void filesCreator()
         {
 
             int fileid = 0;
             bool notfinded = true;
-
             string path = @".\output\";
+            long percent = 0;
 
-            IsFolderExisting(path);
+
+
+            if (!IsFolderExisting(path))
+            {
+                Directory.CreateDirectory(path);
+            }
 
             while (notfinded)
             {
@@ -90,15 +95,15 @@ namespace Number_Changer
 
             ProgressOfLines.Maximum = Int32.Parse(LinesEntered);
 
-            // Bloque durant les changements durant le processus
+            // Bloque les changements durant durant le processus
             ToChangeTextBox.Enabled = false;
             NumberLinesTextBox.Enabled = false;
-
 
             using (StreamWriter file = new StreamWriter($@"{path}{fileid}.txt", true))
             {
                 var watch = System.Diagnostics.Stopwatch.StartNew();
                 TookLabel.Visible = true;
+
                 for (int i = 0; i != Int64.Parse(LinesEntered) + 1; i++)
                 {
                     var replacement = ToChangeEntered.Replace("@(*)", i.ToString());
@@ -107,38 +112,34 @@ namespace Number_Changer
                     {
                         ProgressOfLines.Value += 1;
                     }
-                    ProgressOfLines.Refresh();
-                    TookLabel.Text = $"Lines created: {i}/{Int64.Parse(LinesEntered)}";
-                    TookLabel.Refresh();
+                    percent = (i * 100) / Int64.Parse(LinesEntered);
 
+                    ProgressOfLines.Refresh();
+                    TookLabel.Text = $"{percent}% | Lines created: {i}/{Int64.Parse(LinesEntered)}";
+                    TookLabel.Refresh();
                 }
 
+                // Temps passé pour la création
                 watch.Stop();
                 var elapsedMs = watch.ElapsedMilliseconds;
                 TookLabel.Text = "Took "+ elapsedMs.ToString()+"ms";
 
-                ProgressOfLines.Visible = true;
-                finishedLabel.Visible = true;
-                TookLabel.Visible = true;
-
-                PathAndNameLastFile = $"{path}{fileid}.txt";
-                CopyCreatedFileButton.Enabled = true;
-
-                SystemSounds.Exclamation.Play();
             }
+            PathAndNameLastFile = $"{path}{fileid}.txt";
+            SystemSounds.Exclamation.Play();
 
+            ProgressOfLines.Visible = true;
+            finishedLabel.Visible = true;
+            TookLabel.Visible = true;
+            CopyCreatedFileButton.Enabled = true;
             ToChangeTextBox.Enabled = true;
             NumberLinesTextBox.Enabled = true;
         }
 
         private static bool IsFolderExisting(string path)
         {
-            if (Directory.Exists(path)) { return true; }
-            else 
-            {
-                Directory.CreateDirectory(path);
-                return false; 
-            }
+            if (Directory.Exists(path)) return true;
+            else return false; 
         }
 
         private void ExampleButton_Click(object sender, EventArgs e)
