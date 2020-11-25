@@ -45,6 +45,7 @@
             this.GoToFolderButton = new System.Windows.Forms.Button();
             this.ClearOutputFolderButton = new System.Windows.Forms.Button();
             this.CopyCreatedFileButton = new System.Windows.Forms.Button();
+            this.lineBreakCheckBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // buttonStart
@@ -88,7 +89,7 @@
             this.NumberLinesTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(97)))), ((int)(((byte)(125)))));
             this.NumberLinesTextBox.Location = new System.Drawing.Point(410, 30);
             this.NumberLinesTextBox.Name = "NumberLinesTextBox";
-            this.NumberLinesTextBox.Size = new System.Drawing.Size(140, 26);
+            this.NumberLinesTextBox.Size = new System.Drawing.Size(54, 26);
             this.NumberLinesTextBox.TabIndex = 4;
             this.NumberLinesTextBox.Text = "1";
             // 
@@ -111,9 +112,9 @@
             this.DescLabelInputLine.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.DescLabelInputLine.Location = new System.Drawing.Point(407, -2);
             this.DescLabelInputLine.Name = "DescLabelInputLine";
-            this.DescLabelInputLine.Size = new System.Drawing.Size(151, 29);
+            this.DescLabelInputLine.Size = new System.Drawing.Size(154, 29);
             this.DescLabelInputLine.TabIndex = 6;
-            this.DescLabelInputLine.Text = "Lines to create";
+            this.DescLabelInputLine.Text = "Repeat X times";
             // 
             // ProgressOfLines
             // 
@@ -276,13 +277,32 @@
             this.CopyCreatedFileButton.UseVisualStyleBackColor = false;
             this.CopyCreatedFileButton.Click += new System.EventHandler(this.CopyCreatedFileButton_Click);
             // 
+            // lineBreakCheckBox
+            // 
+            this.lineBreakCheckBox.AutoSize = true;
+            this.lineBreakCheckBox.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(97)))), ((int)(((byte)(125)))));
+            this.lineBreakCheckBox.FlatAppearance.BorderSize = 0;
+            this.lineBreakCheckBox.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(97)))), ((int)(((byte)(125)))));
+            this.lineBreakCheckBox.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(146)))), ((int)(((byte)(189)))));
+            this.lineBreakCheckBox.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(146)))), ((int)(((byte)(189)))));
+            this.lineBreakCheckBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lineBreakCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lineBreakCheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.lineBreakCheckBox.Location = new System.Drawing.Point(470, 32);
+            this.lineBreakCheckBox.Name = "lineBreakCheckBox";
+            this.lineBreakCheckBox.Size = new System.Drawing.Size(92, 22);
+            this.lineBreakCheckBox.TabIndex = 18;
+            this.lineBreakCheckBox.Text = "Line break";
+            this.lineBreakCheckBox.UseVisualStyleBackColor = true;
+            // 
             // InterFace
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(564, 205);
+            this.ClientSize = new System.Drawing.Size(564, 206);
+            this.Controls.Add(this.lineBreakCheckBox);
             this.Controls.Add(this.CopyCreatedFileButton);
             this.Controls.Add(this.ClearOutputFolderButton);
             this.Controls.Add(this.GoToFolderButton);
@@ -302,8 +322,8 @@
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(580, 244);
-            this.MinimumSize = new System.Drawing.Size(580, 224);
+            this.MaximumSize = new System.Drawing.Size(580, 245);
+            this.MinimumSize = new System.Drawing.Size(580, 245);
             this.Name = "InterFace";
             this.Text = "Number Changer";
             this.Load += new System.EventHandler(this.InterFace_Load);
@@ -330,6 +350,7 @@
         private System.Windows.Forms.Button GoToFolderButton;
         private System.Windows.Forms.Button ClearOutputFolderButton;
         private System.Windows.Forms.Button CopyCreatedFileButton;
+        private System.Windows.Forms.CheckBox lineBreakCheckBox;
     }
 }
 

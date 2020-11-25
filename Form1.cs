@@ -25,7 +25,7 @@ namespace Number_Changer
         public static string ToChangeEntered = "";
         public static string LinesEntered = "";
         public static string PathAndNameLastFile = "";
-        public static string version = "1.1.1";
+        public static string version = "1.1.2";
 
         private void InterFace_Load(object sender, EventArgs e)
         {
@@ -141,7 +141,8 @@ namespace Number_Changer
                     var replacement = ToChangeEntered.Replace("@(*)", i.ToString());
 
                     // Appliquer la ligne
-                    file.WriteLine(replacement);
+                    if (lineBreakCheckBox.Checked) { file.WriteLine(replacement); }
+                    else { file.Write(replacement); }
 
                     // Tant que la progress bar n'est pas à son maximum, lui ajouter 1 a chaque incrémentation de i
                     if (ProgressOfLines.Value < ProgressOfLines.Maximum)
@@ -155,7 +156,7 @@ namespace Number_Changer
                     // Refresh de la progress
                     ProgressOfLines.Invoke(new Action(() => ProgressOfLines.Refresh()));
                     // Label contenant le pourcentage | nb de ligne sur le nb total à créer
-                    TookLabel.Invoke(new Action(() => TookLabel.Text = $"{percent}% | Lines created: {i}/{Int64.Parse(LinesEntered)}"));
+                    TookLabel.Invoke(new Action(() => TookLabel.Text = $"{percent}% | Times repeated {i}/{Int64.Parse(LinesEntered)}"));
                     // Refresh du label de % ou nb de lignes
                     TookLabel.Invoke(new Action(() => TookLabel.Refresh()));
                 }
