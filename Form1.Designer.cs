@@ -56,7 +56,7 @@
             this.buttonStart.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(146)))), ((int)(((byte)(189)))));
             this.buttonStart.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(146)))), ((int)(((byte)(189)))));
             this.buttonStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonStart.Font = new System.Drawing.Font("Master Black Personal Use", 26.25F, System.Drawing.FontStyle.Bold);
+            this.buttonStart.Font = new System.Drawing.Font("Master Black Personal Use", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonStart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
             this.buttonStart.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.buttonStart.Location = new System.Drawing.Point(12, 130);
@@ -156,9 +156,9 @@
             this.Version.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Version.Location = new System.Drawing.Point(0, 192);
             this.Version.Name = "Version";
-            this.Version.Size = new System.Drawing.Size(76, 13);
+            this.Version.Size = new System.Drawing.Size(36, 13);
             this.Version.TabIndex = 10;
-            this.Version.Text = "V1.1.0 - Cuchi\'";
+            this.Version.Text = "Cuchi\'";
             // 
             // finishedLabel
             // 
@@ -305,7 +305,8 @@
             this.MaximumSize = new System.Drawing.Size(580, 244);
             this.MinimumSize = new System.Drawing.Size(580, 224);
             this.Name = "InterFace";
-            this.Text = "Number Changer - V1.1.0";
+            this.Text = "Number Changer";
+            this.Load += new System.EventHandler(this.InterFace_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
