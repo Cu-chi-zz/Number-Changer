@@ -64,11 +64,22 @@ namespace Number_Changer
             }
 
             ProgressOfLines.Visible = true;
+            ProgressOfLines.Maximum = Int32.Parse(LinesEntered);
 
-            filesCreator();
+            var worker = new BackgroundWorker();
+            // Création d'une instance qui execute la methodes "filesCreateor" a son demarrage
+            worker.DoWork += new DoWorkEventHandler(filesCreator);
+            // Exectution de la fonctions filesCreator en mode asynchronisé
+            worker.RunWorkerAsync();
+            // Bloque les changements & boutons durant durant le processus
+            ToChangeTextBox.Enabled = false;
+            NumberLinesTextBox.Enabled = false;
+            buttonStart.Enabled = false;
+            ClearOutputFolderButton.Enabled = false;
+
         }
 
-        private async void filesCreator()
+        private void filesCreator(object sender, DoWorkEventArgs e)
         {
 
             int fileid = 0;
@@ -76,7 +87,8 @@ namespace Number_Changer
             string path = @".\output\";
             long percent = 0;
 
-
+            Invoke(new Action(() => Text = "Number Changer - V1.0.7 - [WORKING]"));
+            ProgressOfLines.Invoke(new Action(() => ProgressOfLines.Value = 0));
 
             if (!IsFolderExisting(path))
             {
@@ -93,16 +105,11 @@ namespace Number_Changer
                 }
             }
 
-            ProgressOfLines.Maximum = Int32.Parse(LinesEntered);
-
-            // Bloque les changements durant durant le processus
-            ToChangeTextBox.Enabled = false;
-            NumberLinesTextBox.Enabled = false;
-
             using (StreamWriter file = new StreamWriter($@"{path}{fileid}.txt", true))
             {
                 var watch = System.Diagnostics.Stopwatch.StartNew();
-                TookLabel.Visible = true;
+                // Utilisation de la fonction "Invoke()" pour avoir l'autorisation de modifier l'objet
+                TookLabel.Invoke(new Action(() => TookLabel.Visible = true));
 
                 for (int i = 0; i != Int64.Parse(LinesEntered) + 1; i++)
                 {
@@ -110,30 +117,34 @@ namespace Number_Changer
                     file.WriteLine(replacement);
                     if (ProgressOfLines.Value < ProgressOfLines.Maximum)
                     {
-                        ProgressOfLines.Value += 1;
+                        ProgressOfLines.Invoke(new Action(() => ProgressOfLines.Value += 1));
                     }
                     percent = (i * 100) / Int64.Parse(LinesEntered);
 
-                    ProgressOfLines.Refresh();
-                    TookLabel.Text = $"{percent}% | Lines created: {i}/{Int64.Parse(LinesEntered)}";
-                    TookLabel.Refresh();
+                    ProgressOfLines.Invoke(new Action(() => ProgressOfLines.Refresh()));
+                    TookLabel.Invoke(new Action(() => TookLabel.Text = $"{percent}% | Lines created: {i}/{Int64.Parse(LinesEntered)}"));
+                    TookLabel.Invoke(new Action(() => TookLabel.Refresh()));
                 }
 
                 // Temps passé pour la création
                 watch.Stop();
                 var elapsedMs = watch.ElapsedMilliseconds;
-                TookLabel.Text = "Took "+ elapsedMs.ToString()+"ms";
+                TookLabel.Invoke(new Action(() => TookLabel.Text = "Took " + elapsedMs.ToString() + "ms"));
 
             }
             PathAndNameLastFile = $"{path}{fileid}.txt";
             SystemSounds.Exclamation.Play();
 
-            ProgressOfLines.Visible = true;
-            finishedLabel.Visible = true;
-            TookLabel.Visible = true;
-            CopyCreatedFileButton.Enabled = true;
-            ToChangeTextBox.Enabled = true;
-            NumberLinesTextBox.Enabled = true;
+            ProgressOfLines.Invoke(new Action(() => ProgressOfLines.Visible = true));
+            finishedLabel.Invoke(new Action(() => finishedLabel.Visible = true));
+            TookLabel.Invoke(new Action(() => TookLabel.Visible = true));
+            CopyCreatedFileButton.Invoke(new Action(() => CopyCreatedFileButton.Enabled = true));
+            ToChangeTextBox.Invoke(new Action(() => ToChangeTextBox.Enabled = true));
+            NumberLinesTextBox.Invoke(new Action(() => NumberLinesTextBox.Enabled = true));
+            buttonStart.Invoke(new Action(() => buttonStart.Enabled = true));
+            ClearOutputFolderButton.Invoke(new Action(() => ClearOutputFolderButton.Enabled = true));
+
+            Invoke(new Action(() => Text = "Number Changer - V1.0.7"));
         }
 
         private static bool IsFolderExisting(string path)

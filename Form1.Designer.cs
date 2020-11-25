@@ -158,7 +158,7 @@
             this.Version.Name = "Version";
             this.Version.Size = new System.Drawing.Size(76, 13);
             this.Version.TabIndex = 10;
-            this.Version.Text = "V1.0.7 - Cuchi\'";
+            this.Version.Text = "V1.1.0 - Cuchi\'";
             // 
             // finishedLabel
             // 
@@ -305,7 +305,7 @@
             this.MaximumSize = new System.Drawing.Size(580, 244);
             this.MinimumSize = new System.Drawing.Size(580, 224);
             this.Name = "InterFace";
-            this.Text = "Number Changer - V1.0.7";
+            this.Text = "Number Changer - V1.1.0";
             this.ResumeLayout(false);
             this.PerformLayout();
 
