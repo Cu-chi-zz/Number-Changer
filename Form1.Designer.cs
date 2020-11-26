@@ -236,7 +236,7 @@
             this.GoToFolderButton.Name = "GoToFolderButton";
             this.GoToFolderButton.Size = new System.Drawing.Size(194, 22);
             this.GoToFolderButton.TabIndex = 15;
-            this.GoToFolderButton.Text = "Go To Folder";
+            this.GoToFolderButton.Text = "Go to Folder";
             this.GoToFolderButton.UseVisualStyleBackColor = false;
             this.GoToFolderButton.Click += new System.EventHandler(this.GoToFolderButton_Click);
             // 

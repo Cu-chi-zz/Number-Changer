@@ -11,7 +11,9 @@ using System.IO;
 using System.Media;
 using System.Threading;
 using System.Drawing.Text;
+using Octokit;
 
+// https://api.github.com/repos/Cu-chi/Number-Changer/releases/latest
 namespace Number_Changer
 {
     public partial class InterFace : Form
@@ -25,10 +27,29 @@ namespace Number_Changer
         public static string ToChangeEntered = "";
         public static string LinesEntered = "";
         public static string PathAndNameLastFile = "";
-        public static string version = "1.1.2";
+        public static string version = "1.2.0";
 
-        private void InterFace_Load(object sender, EventArgs e)
+        private async void InterFace_Load(object sender, EventArgs e)
         {
+
+            var client = new GitHubClient(new ProductHeaderValue("Number-Changer"));
+            var releases = await client.Repository.Release.GetAll("Cu-chi", "Number-Changer");
+            var latest = releases[0];
+
+            if ("V"+version != latest.TagName)
+            {
+                DialogResult verResult = MessageBox.Show($"A new version is now available :\nYou are using > V{version}\nNew > {latest.TagName}\nDo you want to install the new version?", "WARNING", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
+
+                if (verResult == DialogResult.Yes)
+                {
+                    System.Diagnostics.Process.Start($"https://github.com/Cu-chi/Number-Changer/releases/download/{latest.TagName}/Number-Changer-{latest.TagName}.zip");
+                }
+                else
+                {
+                    version += " (outdated)";
+                }
+            }
+
             // Importations des polices personnalisées
             PrivateFontCollection pfc = new PrivateFontCollection();
             pfc.AddFontFile(@"ui\MasterBlack.otf");
